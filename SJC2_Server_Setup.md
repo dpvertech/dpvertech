@@ -1,4 +1,4 @@
-# SJC2 (Rap Lab) Server Setup
+# SJC2 (Rap Lab) Server Setup a
 
 ## Background
 
