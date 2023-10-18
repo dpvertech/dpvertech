@@ -11,7 +11,7 @@ At SJC2 Rap Lab, we have 2 servers:
 - 10.150.162.38 - rl-ignition01-r23-u24 - rl-ignition01 (axis)
 - 10.150.162.39 - rl-ignition02-r23-u24 - rl-ignition02 (axis)
 
-Username for both servers is `nvidian` - password can be found in lastpass. Reach out to David Folkner if you do not have access to this information in LastPass.
+Username for both servers is `nvidian` - password can be found in the Shared Project Library in LastPass under the 'NVIDIA' project.  There is a secure note named 'NVIDIA Server'. Reach out to David Folkner if you do not have access to this information in LastPass.
 
 Jump Servers:
 
@@ -214,9 +214,9 @@ The servers should be listed there as
 - rl-ignition01
 - rl-ignition02
 
-YOu login with the username: `nvidian`
+You login with the username: `nvidian`
 
-Password can be found in the Lastpass Notes for both machines. Reach out to David Folkner if you do not have access to this information in LastPass.
+The password can be found in the Shared Project Library in LastPass under the 'NVIDIA' project.  There is a secure note named 'NVIDIA Server'. Reach out to David Folkner if you do not have access to this information in LastPass.
 
 ### Tunneling
 
