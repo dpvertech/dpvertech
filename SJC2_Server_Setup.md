@@ -141,6 +141,8 @@ Host tunnel
 
 With this you can just SSH like normal using the keywords such as `primary_ignition` or `tunnel`
 
+Note: If you have other gateways on LocalHost (not ideal), change the first port to something else (ex. LocalForward 8090 localhost:8088)
+
 ##### Setup a key instead of password access
 
 It is best practice to setup a keystore or something similar to access the servers instead of using passworded access.  `nvinit` did an alternate version of this for the jump server, thus the reason you don't need to enter your password when accessing.  
@@ -148,10 +150,20 @@ It is best practice to setup a keystore or something similar to access the serve
 To do this we are going to:
 1. run `ssh-keygen` - This will make two files in your `.ssh` folder a private and public key.  Just press enter through most of the options.
 2. Most tutorials have you use ssh-copy-id, but windows doesn't have this command often.
-3. ssh into the server - `ssh primary_ignition` - use the password
-4. Make sure that the `.ssh` exist or make it
-5. `exit` - to leave ssh mode
-6. `scp .ssh\id_rsa.pub primary_ignition:~\.ssh\authorized_keys` again using the known password
+4. ssh into the server - `ssh primary_ignition` - use the password
+5. Make sure that the `.ssh` exist or make it
+6. Using VSCode (if you have it) open the file 'id_vault-cert.pub' and copy the whole line (starts with ssh-rsa)
+7. Navigate to your .ssh folder through the command line you used ssh to connect to primary_ignition with (just run 'cd .ssh')
+8. Run the ls command to see if the 'authorized_keys' file is present. Proceed to step 9 if it is present, or reach out to David Folkner for support if it is not.
+9. Type 'nano authorized_keys' or 'vim authorized_keys' etc to open the file in a text editor
+10. Press the "down arrow" on your keyboard to go to the next line, and right click. This will paste the long string you copied from step 6.
+11. You will see a prompt when pasting. Just confirm it's ok through the dialog.
+12. Once the long string is pasted on the new line, hit "Ctrl+S" and "Ctrl+X" to exit the editor.
+13. type `exit` - to leave ssh mode
+14. Now, just type 'ssh primary_ignition' and you should be able to connect without using a password.
+
+###########################################Old Step##################################################
+14. `scp .ssh\id_rsa.pub primary_ignition:~\.ssh\authorized_keys` again using the known password
    1. If the file already exists, you'll need to manually add it to that file instead of overwriting it.
 
 Now you can ssh to that sever without using a password which is actually more secure.  Cool thing here is the key is only on the end server, not the jump server at all.
